@@ -1,0 +1,444 @@
+/* ============================================
+   GLOBAL
+=============================================== */
+:root {
+  --cream: #fdf8f3;
+  --blush: #f6e4e1;
+  --rose: #d9a8a0;
+  --rose-dark: #b9716a;
+  --gold: #c9a86a;
+  --charcoal: #3a322c;
+  --soft-brown: #6b5b51;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: 'Cormorant Garamond', serif;
+  overflow-x: hidden;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  text-align: center;
+  color: var(--rose-dark);
+  margin-bottom: 0.4rem;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--soft-brown);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+
+/* ============================================
+   SPARKLES BACKGROUND
+=============================================== */
+.sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+}
+
+/* ============================================
+   HERO
+=============================================== */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(ellipse at center, var(--blush) 0%, var(--cream) 70%);
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1.5rem;
+}
+
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--soft-brown);
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 7rem;
+  color: var(--rose-dark);
+  line-height: 1.1;
+  text-shadow: 2px 2px 12px rgba(217, 168, 160, 0.4);
+  animation: gentleFade 1.8s ease;
+}
+
+.hero-tagline {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--soft-brown);
+  margin-top: 1rem;
+}
+
+@keyframes gentleFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.scroll-cue {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: var(--gold);
+  margin-top: 8px;
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 0.4; }
+  50% { transform: scaleY(1.3); opacity: 1; }
+}
+
+/* ============================================
+   MESSAGE SECTION
+=============================================== */
+.message-section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 7rem 1.5rem;
+  text-align: center;
+}
+
+.ornament {
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin: 0.5rem 0;
+}
+
+.message-text {
+  font-size: 1.5rem;
+  line-height: 1.9;
+  color: var(--charcoal);
+  font-style: italic;
+}
+
+/* ============================================
+   GALLERY SECTION
+=============================================== */
+.gallery-section {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--blush) 50%, var(--cream) 100%);
+  text-align: center;
+}
+
+.gallery-wrapper {
+  position: relative;
+  max-width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(185, 113, 106, 0.25);
+}
+
+.gallery-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+}
+
+.gallery-slide.active {
+  opacity: 1;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+}
+
+.gallery-quote {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 2rem 3rem;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--white);
+  text-align: center;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.65));
+  line-height: 1.6;
+}
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1.8rem;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--rose);
+  opacity: 0.35;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  opacity: 1;
+  transform: scale(1.3);
+  background: var(--rose-dark);
+}
+
+/* ============================================
+   GIFT CARDS
+=============================================== */
+.gift-section {
+  padding: 6rem 1.5rem;
+  text-align: center;
+}
+
+.gift-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gift-card {
+  width: 240px;
+  height: 300px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.gift-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.gift-card.flipped .gift-card-inner {
+  transform: rotateY(180deg);
+}
+
+.gift-card-front,
+.gift-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-shadow: 0 15px 35px rgba(185, 113, 106, 0.2);
+}
+
+.gift-card-front {
+  background: linear-gradient(135deg, var(--blush), var(--rose));
+  color: var(--white);
+}
+
+.gift-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.gift-card-front p {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.gift-card-back {
+  background: var(--white);
+  border: 2px solid var(--rose);
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.gift-img {
+  width: 100%;
+  max-height: 65%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.gift-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--soft-brown);
+  line-height: 1.5;
+}
+
+/* ============================================
+   CAKE SECTION
+=============================================== */
+.cake-section {
+  padding: 6rem 1.5rem;
+  text-align: center;
+  background: var(--blush);
+}
+
+.cake {
+  position: relative;
+  width: 220px;
+  margin: 3rem auto 1.5rem;
+}
+
+.candle {
+  position: relative;
+  width: 10px;
+  height: 40px;
+  background: var(--gold);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.flame {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 22px;
+  background: radial-gradient(circle, #fff6c8, #ffb347 60%, #ff7b00);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: flicker 0.4s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.flame.out {
+  opacity: 0;
+  transform: translateX(-50%) scale(0.2);
+}
+
+@keyframes flicker {
+  0% { transform: translateX(-50%) scale(1) rotate(-2deg); }
+  100% { transform: translateX(-50%) scale(1.08) rotate(2deg); }
+}
+
+.cake-top, .cake-middle, .cake-bottom {
+  border-radius: 10px;
+  margin: 0 auto;
+  box-shadow: inset 0 -6px 10px rgba(0,0,0,0.08);
+}
+
+.cake-top {
+  width: 140px;
+  height: 50px;
+  background: var(--rose);
+}
+
+.cake-middle {
+  width: 180px;
+  height: 55px;
+  background: var(--blush);
+  border: 2px solid var(--rose);
+}
+
+.cake-bottom {
+  width: 220px;
+  height: 60px;
+  background: var(--rose-dark);
+}
+
+.cake-hint {
+  font-style: italic;
+  color: var(--soft-brown);
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   FOOTER
+=============================================== */
+.footer {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background: var(--charcoal);
+}
+
+.footer-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: var(--blush);
+}
+
+.footer-sub {
+  font-style: italic;
+  color: var(--rose);
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   RESPONSIVE
+=============================================== */
+@media (max-width: 600px) {
+  .hero-title { font-size: 4.5rem; }
+  .gallery-wrapper { height: 420px; }
+  .section-title { font-size: 1.9rem; }
+  .message-text { font-size: 1.25rem; }
+  .gift-card { width: 80%; max-width: 240px; }
+}

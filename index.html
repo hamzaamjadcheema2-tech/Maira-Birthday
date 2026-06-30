@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday, Maira 🎂</title>
+
+<!-- Elegant Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ================= FLOATING PARTICLES / SPARKLES ================= -->
+<div class="sparkles" id="sparkles"></div>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <p class="hero-subtitle">A little something for</p>
+    <h1 class="hero-title">Maira</h1>
+    <p class="hero-tagline">because the world is brighter with you in it</p>
+    <div class="scroll-cue">
+      <span>scroll down</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MESSAGE SECTION ================= -->
+<section class="message-section">
+  <div class="ornament">❦</div>
+  <h2 class="section-title">A Note For You</h2>
+  <p class="message-text">
+    Dearest Maira,<br><br>
+    On this special day, I just want you to know how much your friendship means to me.
+    You bring warmth, laughter, and light into every room you walk into.
+    <br><br>
+    Here's to celebrating you today — and always.
+    <!-- ✏️ EDIT THIS MESSAGE: replace with your own heartfelt note -->
+  </p>
+  <div class="ornament">❦</div>
+</section>
+
+<!-- ================= PHOTO GALLERY SECTION ================= -->
+<section class="gallery-section" id="gallery">
+  <h2 class="section-title">Our Moments</h2>
+  <p class="section-subtitle">Scroll through a few favorites</p>
+
+  <div class="gallery-wrapper" id="galleryWrapper">
+    <!--
+      ============================================
+      📸 HOW TO ADD YOUR PHOTOS:
+      1. Place your 6-7 images inside the "images" folder
+         and name them photo1.jpg, photo2.jpg ... photo7.jpg
+         (or update the src paths below to match your filenames)
+      2. Each slide below already has a quote — feel free to
+         change the quote text to whatever you like.
+      3. If you have fewer than 7 photos, simply delete extra
+         .gallery-slide blocks. If you have more, copy a block
+         and add more.
+      ============================================
+    -->
+    <div class="gallery-slide active">
+      <img src="images/photo1.jpg" alt="Maira memory 1" class="gallery-img">
+      <div class="gallery-quote">"Friendship is the golden thread that ties the heart of all the world."</div>
+    </div>
+    <div class="gallery-slide">
+      <img src="images/photo2.jpg" alt="Maira memory 2" class="gallery-img">
+      <div class="gallery-quote">"Some people make the world special just by being in it."</div>
+    </div>
+    <div class="gallery-slide">
+      <img src="images/photo3.jpg" alt="Maira memory 3" class="gallery-img">
+      <div class="gallery-quote">"A good friend is a connection to life, a tie to the past, a road to the future."</div>
+    </div>
+    <div class="gallery-slide">
+      <img src="images/photo4.jpg" alt="Maira memory 4" class="gallery-img">
+      <div class="gallery-quote">"Where there is great love, there are always miracles."</div>
+    </div>
+    <div class="gallery-slide">
+      <img src="images/photo5.jpg" alt="Maira memory 5" class="gallery-img">
+      <div class="gallery-quote">"Laughter is timeless, memories are priceless, and friendship is forever."</div>
+    </div>
+    <div class="gallery-slide">
+      <img src="images/photo6.jpg" alt="Maira memory 6" class="gallery-img">
+      <div class="gallery-quote">"You're the kind of friend everyone deserves but few are lucky enough to have."</div>
+    </div>
+    <div class="gallery-slide">
+      <img src="images/photo7.jpg" alt="Maira memory 7" class="gallery-img">
+      <div class="gallery-quote">"Here's to the nights we won't remember, with the friend we won't forget."</div>
+    </div>
+  </div>
+
+  <div class="gallery-dots" id="galleryDots"></div>
+</section>
+
+<!-- ================= GIFT CARDS SECTION ================= -->
+<section class="gift-section">
+  <h2 class="section-title">A Little Gift</h2>
+  <p class="section-subtitle">Click a card to open it</p>
+
+  <div class="gift-cards">
+    <!--
+      ============================================
+      🎁 HOW TO ADD GIFT CARD IMAGES:
+      Put your gift card / voucher images inside the
+      "images" folder, named gift1.jpg, gift2.jpg, gift3.jpg
+      (or change the paths below). You can also just edit
+      the text instead of using an image — see the
+      "gift-text" fallback inside each card.
+      ============================================
+    -->
+    <div class="gift-card">
+      <div class="gift-card-inner">
+        <div class="gift-card-front">
+          <span class="gift-icon">🎁</span>
+          <p>Tap to reveal</p>
+        </div>
+        <div class="gift-card-back">
+          <img src="images/gift1.jpg" alt="Gift 1" class="gift-img" onerror="this.style.display='none'">
+          <p class="gift-text">A surprise treat just for you — redeem this with me anytime! 🎀</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gift-card">
+      <div class="gift-card-inner">
+        <div class="gift-card-front">
+          <span class="gift-icon">💌</span>
+          <p>Tap to reveal</p>
+        </div>
+        <div class="gift-card-back">
+          <img src="images/gift2.jpg" alt="Gift 2" class="gift-img" onerror="this.style.display='none'">
+          <p class="gift-text">One coffee date, on me, no excuses allowed ☕</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gift-card">
+      <div class="gift-card-inner">
+        <div class="gift-card-front">
+          <span class="gift-icon">✨</span>
+          <p>Tap to reveal</p>
+        </div>
+        <div class="gift-card-back">
+          <img src="images/gift3.jpg" alt="Gift 3" class="gift-img" onerror="this.style.display='none'">
+          <p class="gift-text">A promise: I'm always just a call away 💕</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BIRTHDAY CAKE / CANDLE SECTION ================= -->
+<section class="cake-section">
+  <h2 class="section-title">Make a Wish</h2>
+  <div class="cake" id="cake">
+    <div class="candle">
+      <div class="flame" id="flame"></div>
+    </div>
+    <div class="cake-top"></div>
+    <div class="cake-middle"></div>
+    <div class="cake-bottom"></div>
+  </div>
+  <p class="cake-hint" id="cakeHint">Tap the candle to blow it out 🕯️</p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p class="footer-text">Happy Birthday, Maira</p>
+  <p class="footer-sub">With all my love, today and always</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
